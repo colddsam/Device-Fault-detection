@@ -1,0 +1,7 @@
+/__pycache__
+/venv
+secret.py
+/backend/__pycache__
+/backend/venv
+/backend/utils/__pycache__
+/backend/secret.py
