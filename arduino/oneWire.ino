@@ -18,8 +18,8 @@ struct DeviceInfo {
 
 const int count = 1;
 DeviceInfo deviceInfo[count];
-const char *ssid = "";
-const char *password = "";
+const char *ssid = "Realme5";
+const char *password = "souvik2003";
 String endPoint = "https://device-fault-detection-jxo2.onrender.com";
 
 int deviceCount = 0;
