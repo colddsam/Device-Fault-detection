@@ -1,3 +1,4 @@
+pyserial
 python-dotenv
 fastapi
 uvicorn
