@@ -2,7 +2,7 @@
 #include <DallasTemperature.h>
 
 #define ONE_WIRE_BUS 2
-#define LDR_INPUT 8
+#define LDR_INPUT A0
 
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
@@ -81,13 +81,14 @@ void loop() {
       int mainIndex = deviceInfo[i].mainIndex;
       float tempL = sensors.getTempC(sensorAddresses[lampIndex]);
       float tempM = sensors.getTempC(sensorAddresses[mainIndex]);
-      int intensity = digitalRead(LDR_INPUT);
+      int intensity = analogRead(LDR_INPUT);
+      float lightIntensity=100.0 - (intensity/1023.0)*100.0;
       bool flag = calculatingCondition(tempL, tempM);
       Serial.print(tempM);
       Serial.print(",");
       Serial.print(tempL);
       Serial.print(",");
-      Serial.print(intensity);
+      Serial.print(lightIntensity);
       Serial.print(",");
       Serial.println(flag);
     }
